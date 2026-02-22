@@ -1,0 +1,456 @@
+/* ===== GLOBAL ===== */
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background: radial-gradient(circle at top left, #1e293b, #0f172a 60%);
+  color: white;
+  overflow-x: hidden;
+}
+
+.page {
+  min-height: 100vh;
+  display: none;
+  position: relative;
+}
+
+.page.active {
+  display: block;
+}
+
+/* =========================================
+   PAGE 1 – DARK BIRTHDAY CARD
+========================================= */
+
+./* ===============================
+   PAGE 1 – SCOPED GOTHIC CARD
+================================ */
+/* 🌑 PAGE 1 FULL SCREEN CENTER */
+/* 🌑 PAGE 1 FULL SCREEN */
+.page1 {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    background: radial-gradient(circle at 50% 35%, #1a132f, #05040a);
+    overflow: hidden;
+}
+
+/* 🌫️ DARK EDGE VIGNETTE */
+.page1::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle, transparent 55%, rgba(0,0,0,0.7));
+    pointer-events: none;
+}
+
+/* ✨ FLOATING LIGHTS */
+.page1 .light {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(100px);
+    opacity: 0.45;
+    animation: float 16s infinite alternate ease-in-out;
+}
+
+.page1 .light1 {
+    width: 340px;
+    height: 340px;
+    background: #5b4b8a;
+    top: 8%;
+    left: 6%;
+}
+
+.page1 .light2 {
+    width: 400px;
+    height: 400px;
+    background: #a084dc;
+    bottom: 6%;
+    right: 8%;
+}
+
+.page1 .light3 {
+    width: 260px;
+    height: 260px;
+    background: #ffccd5;
+    top: 60%;
+    right: 38%;
+}
+
+/* 🖤 CARD EXACT SIZE LIKE SCREENSHOT */
+.page1 .memory-card {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    display: flex;
+    align-items: center;
+    gap: 45px;
+
+    padding: 45px 55px;      /* reduced */
+    width: 720px;            /* 🔥 smaller width */
+    max-width: 92%;
+
+    background: rgba(5, 5, 15, 0.72);
+    backdrop-filter: blur(30px);
+    border-radius: 32px;
+
+    box-shadow: 0 40px 120px rgba(0, 0, 0, 0.75);
+    z-index: 2;
+}
+
+
+/* 🕷️ IMAGE WITH BLINKING GLOW */
+.page1 .memory-image {
+    width: 240px;
+    height: 240px;
+    border-radius: 50%;
+    background: url("https://res.cloudinary.com/dh7f4s0us/image/upload/v1770710047/Gothic_Wednesday_in_the_moonlight_hzh4lw.png") center/cover no-repeat;
+
+    /* white ring */
+    box-shadow:
+        0 0 0 18px #ffffff,
+        inset 0 0 20px rgba(0,0,0,0.45);
+
+    animation: glowBlink 3s infinite ease-in-out;
+}
+
+/* ✨ BLINKING GLOW ANIMATION */
+@keyframes glowBlink {
+    0% {
+        box-shadow:
+            0 0 0 18px #ffffff,
+            inset 0 0 20px rgba(0,0,0,0.45),
+            0 0 40px rgba(160,132,220,0.55),
+            0 0 90px rgba(91,75,138,0.45);
+    }
+
+    50% {
+        box-shadow:
+            0 0 0 18px #ffffff,
+            inset 0 0 20px rgba(0,0,0,0.45),
+            0 0 80px rgba(160,132,220,0.9),
+            0 0 160px rgba(91,75,138,0.75);
+    }
+
+    100% {
+        box-shadow:
+            0 0 0 18px #ffffff,
+            inset 0 0 20px rgba(0,0,0,0.45),
+            0 0 40px rgba(160,132,220,0.55),
+            0 0 90px rgba(91,75,138,0.45);
+    }
+}
+
+/* 🖤 TEXT */
+.page1 .memory-content h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 48px;
+    margin-bottom: 18px;
+}
+
+.page1 .memory-content p {
+    font-size: 17px;
+    line-height: 1.9;
+    opacity: 0.95;
+    max-width: 420px;
+}
+
+/* 🖐️ BUTTON */
+.page1 .enter-btn {
+    margin-top: 30px;
+    padding: 15px 48px;
+    border-radius: 42px;
+    border: 1px solid rgba(255,255,255,0.25);
+    background: linear-gradient(135deg, #0b0b14, #2b234d);
+    color: #fff;
+    font-size: 15px;
+
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+
+    box-shadow: 0 14px 40px rgba(160,132,220,0.5);
+    transition: 0.35s;
+}
+
+.page1 .enter-btn:hover {
+    transform: scale(1.08);
+}
+
+/* 🖐️ HAND WAVE */
+.page1 .hand {
+    display: inline-block;
+    animation: wave 2s infinite;
+}
+
+/* 📱 MOBILE */
+@media (max-width: 768px) {
+    .page1 .memory-card {
+        flex-direction: column;
+        text-align: center;
+        gap: 30px;
+        padding: 40px 28px;
+    }
+
+    .page1 .memory-image {
+        width: 200px;
+        height: 200px;
+    }
+}
+/* =========================================
+   PAGE 2 – MAGAZINE PAGE
+========================================= */
+
+.page2 .container {
+  text-align: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+}
+
+.page2 h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 48px;
+  color: #ff85a2;
+}
+
+.flipbook-card {
+  margin-top: 30px;
+  padding: 40px;
+  border-radius: 30px;
+  background: rgba(255,255,255,0.05);
+  backdrop-filter: blur(16px);
+  box-shadow: 0 0 50px rgba(255,105,180,0.25);
+}
+
+.flip-btn, .back-btn {
+  margin-top: 20px;
+  padding: 12px 28px;
+  border-radius: 30px;
+  border: none;
+  background: linear-gradient(45deg,#ff4d88,#ff85a2);
+  color: white;
+  cursor: pointer;
+}
+
+.instruction-text {
+  font-size: 14px;
+  opacity: 0.85;
+}
+
+/* =========================================
+   PAGE 3 – INTENTIONS / PEAK INTIMACY
+========================================= */
+
+/* ================= PAGE 3 INTENTIONS ================= */
+
+.page3{
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* TAP OVERLAY */
+.page3 .music-overlay{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: black;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 26px;
+  z-index: 999;
+  cursor: pointer;
+  text-align: center;
+  padding: 20px;
+}
+
+/* BACKGROUND ANIMATION */
+.page3 .intentions-bg-animation{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(45deg,#1e1e2f,#3a1c71);
+  transition: background 3s ease;
+  z-index: 0;
+}
+
+/* HEADING */
+.page3 .intentions-title{
+  position: absolute;
+  top: 25px;
+  width: 100%;
+  text-align: center;
+  font-size: 34px;
+  color: white;
+  letter-spacing: 2px;
+  text-shadow: 0 0 15px rgba(255,255,255,0.7);
+  font-weight: 500;
+  z-index: 2;
+}
+
+.page3 .intentions-title span{
+  font-size: 20px;
+  color: #ff9ac6;
+}
+
+/* CARD CONTAINER */
+.page3 .intentions-card-container{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  z-index: 1;
+}
+
+/* CARD STYLE */
+.page3 .intentions-card{
+  position: absolute;
+  width: 600px;
+  height: 420px;
+  border-radius: 25px;
+  overflow: hidden;
+  opacity: 0;
+  transform: translateX(120vw) scale(0.9);
+  transition: transform 4s ease, opacity 4s ease;
+  box-shadow:
+    0 0 60px rgba(0,0,0,0.9),
+    0 0 25px rgba(255,105,180,0.3);
+}
+
+/* IMAGE FULL */
+.page3 .intentions-card img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* BACK BUTTON POSITION */
+.page3 .page3-back{
+  position: absolute;
+  bottom: 30px;
+  left: 30px;
+  z-index: 3;
+
+}
+/* Ensure Next button is on top and initially hidden */
+/* PAGE 3 NEXT BUTTON */
+#page3Next {
+  position: absolute;
+  bottom: 40px;
+  right: 40px;
+  z-index: 999;
+
+  display: none;
+  opacity: 0;
+
+  transition: opacity 3s ease;
+}
+
+#page3Next.show {
+  display: inline-flex;
+  opacity: 1;
+}
+/* =========================================
+   PAGE 4 – SLIDESHOW + FINAL CARD
+========================================= */
+
+.page4 h1 {
+  position: absolute;
+  top: 20px;
+  width: 100%;
+  text-align: center;
+  font-family: 'Playfair Display', serif;
+  font-size: 54px;
+  color: #ff6b9d;
+}
+.slideshow {
+  position: absolute;
+  top: 58%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  width: 420px;        /* Smaller width */
+  height: 520px;       /* Reduced height */
+
+  border-radius: 30px;
+  overflow: hidden;
+
+  background: rgba(255, 255, 255, 0.06);
+  backdrop-filter: blur(20px);
+  box-shadow: 0 0 70px rgba(255, 105, 180, 0.3);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.slideshow img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;   /* No cropping */
+
+  opacity: 0;
+  transform: scale(1.05);
+  transition: opacity 1.5s ease, transform 4s ease;
+}
+
+.slideshow img.active {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.slideshow img.active {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.final-card {
+  position: absolute;
+  top: 55%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  width: 70%;
+  max-width: 700px;
+  padding: 45px;
+  border-radius: 30px;
+  text-align: center;
+  background: rgba(30, 41, 59, 0.95);
+  box-shadow: 0 0 70px rgba(255, 105, 180, 0.35);
+  transition: transform 1s ease;
+}
+
+.final-card.show {
+  transform: translate(-50%, -50%) scale(1);
+}
+
+.cake {
+  font-size: 80px;
+  margin-top: 20px;
+  display: none;
+}
+
+#teddyHug {
+  width: 220px;
+  margin-top: 15px;
+  opacity: 0;
+  transform: scale(0.5);
+  transition: all 1.2s ease;
+}
+
+.showTeddy {
+  opacity: 1 !important;
+  transform: scale(1) !important;
+}
